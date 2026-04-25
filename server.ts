@@ -18,8 +18,15 @@ async function startServer() {
   app.use(cors());
   app.use(express.json());
 
+  // Health check
+  app.get('/api/health', (req, res) => {
+    res.json({ status: 'ok', environment: process.env.NODE_ENV });
+  });
+
   // API Routes
   app.post('/api/subscribe', async (req, res) => {
+    console.log('--- Subscription Request Received ---');
+    console.log('Body:', req.body);
     const { name, phone, service } = req.body;
 
     if (!name || !phone || !service) {
