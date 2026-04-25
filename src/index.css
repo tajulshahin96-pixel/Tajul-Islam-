@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-white text-slate-900;
+  }
+}
+
+.electrical-gradient {
+  background: linear-gradient(135deg, #facc15 0%, #eab308 100%);
+}
+
+.dark-pattern {
+  background-color: #0f172a;
+  background-image: radial-gradient(#334155 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+}
